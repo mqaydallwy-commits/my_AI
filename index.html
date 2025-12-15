@@ -4,6 +4,7 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>تسجيل الدخول - الأمن السيبراني</title>
+
   <style>
     @import url('https://fonts.googleapis.com/css2?family=Cairo:wght@600&display=swap');
 
@@ -90,13 +91,15 @@
     }
   </style>
 </head>
+
 <body>
+
   <div class="login-box">
-    <h2>🔐 بوابة ذكاء اصطناعي للالأمن السيبراني</h2>
+    <h2>🔐 بوابة ذكاء اصطناعي للأمن السيبراني</h2>
     <p>حافظ على سرية بياناتك، فالأمن يبدأ من كلمة المرور.</p>
 
-    <!-- ربط النموذج بالـ PHP -->
-    <form action="login.php" method="POST">
+    <!-- نموذج تسجيل الدخول -->
+    <form onsubmit="login(event)">
       <input type="text" name="username" placeholder="👤 اسم المستخدم" required>
       <input type="password" name="password" placeholder="🔑 كلمة المرور" required>
       <button type="submit">تسجيل الدخول</button>
@@ -107,5 +110,23 @@
       🛡️ الأمن السيبراني مسؤولية مشتركة.
     </div>
   </div>
+
+  <!-- JavaScript للتحويل -->
+  <script>
+    function login(event) {
+      event.preventDefault(); // منع إعادة تحميل الصفحة
+
+      const username = document.querySelector('input[name="username"]').value;
+      const password = document.querySelector('input[name="password"]').value;
+
+      if (username !== "" && password !== "") {
+        // التحويل إلى الصفحة المطلوبة
+        window.location.href = "alraud.html";
+      } else {
+        alert("يرجى إدخال اسم المستخدم وكلمة المرور");
+      }
+    }
+  </script>
+
 </body>
 </html>
